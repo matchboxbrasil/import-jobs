@@ -1,6 +1,6 @@
 const alphabetic = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
 
-exports.excelToJson = function (path) {
+exports.toJson = function (path) {
     const xlsx = require('xlsx')
 	const workbook = xlsx.readFile(path)
     
@@ -15,7 +15,7 @@ exports.excelToJson = function (path) {
     const columns = alphabetic.slice(0, countColumns)
     const countLines = countCells / countColumns
 
-    let arraySheets = new Set()
+    let arraySheets = []
     for (let i = 2; i <= countLines; i++) {
         let objCell = {}
         for (let j = 0; j < countColumns; j++) {
@@ -23,7 +23,7 @@ exports.excelToJson = function (path) {
             const cell = sheets[`${columns[j]}${i}`].v
             objCell[title] = cell
         }
-        arraySheets.add(objCell)
+        arraySheets[i - 2] = objCell
     }
     return arraySheets
 }
