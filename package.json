@@ -4,7 +4,7 @@
   "description": "This library help HR to export sheets in Job's site with xml format",
   "main": "index.js",
   "dependencies": {
-    "fast-xml-parser": "4.0.0-beta.8",
+    "fast-xml-parser": "3.17.1",
     "xlsx": "0.17.4",
     "yargs": "17.3.0"
   },

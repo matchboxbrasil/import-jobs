@@ -1,11 +1,20 @@
 exports.toXml = function (json) {
-    const {XMLBuilder} = require('fast-xml-parser');
-    const options = {
-        ignoreAttributes: false,
-        preserveOrder: true,
-        allowBooleanAttributes: true,
-        suppressBooleanAttributes: true
+    const Parser = require("fast-xml-parser").j2xParser;
+    //default options need not to set
+    const defaultOptions = {
+        attributeNamePrefix : "@_",
+        attrNodeName: "@", //default is false
+        textNodeName : "#text",
+        ignoreAttributes : true,
+        cdataTagName: "__cdata", //default is false
+        cdataPositionChar: "\\c",
+        format: false,
+        indentBy: "  ",
+        suppressEmptyNode: false,
+        // tagValueProcessor: a=> he.encode(a, { useNamedReferences: true}),// default is a=>a
+        // attrValueProcessor: a=> he.encode(a, {isAttributeValue: isAttribute, useNamedReferences: true}),// default is a=>a
+        rootNodeName: "element"
     };
-    const builder = new XMLBuilder(options);
-    return builder.build(json);
+    const parser = new Parser(defaultOptions);
+    return parser.parse(json);
 }
