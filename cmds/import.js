@@ -13,5 +13,6 @@ exports.builder = {
 }
 exports.handler = function (argv) {
 	const {excelToJson} = require('../helpers/xlsx')
-	excelToJson(argv.path)
+	const json = excelToJson(argv.path)
+	console.log(json)
 }
