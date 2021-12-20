@@ -5,6 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "fast-xml-parser": "4.0.0-beta.8",
+    "xlsx": "0.17.4",
     "yargs": "17.3.0"
   },
   "devDependencies": {},
@@ -30,7 +31,10 @@
   "eslintConfig": {
     "root": true,
     "rules": {
-      "indent": ["error", "tab"]
+      "indent": [
+        "error",
+        "tab"
+      ]
     }
   }
 }

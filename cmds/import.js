@@ -12,5 +12,6 @@ exports.builder = {
 	}
 }
 exports.handler = function (argv) {
-	console.log('import called for sheet', argv)
+	const {excelToJson} = require('../helpers/xlsx')
+	excelToJson(argv.path)
 }
