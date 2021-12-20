@@ -4,13 +4,16 @@
   "description": "This library help HR to export sheets in Job's site with xml format",
   "main": "index.js",
   "dependencies": {
+    "fast-xml-parser": "4.0.0-beta.8",
     "yargs": "17.3.0"
   },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["cli"],
+  "keywords": [
+    "cli"
+  ],
   "bin": {
     "import-jobs": "./cli.js"
   },
@@ -23,5 +26,11 @@
   "bugs": {
     "url": "https://github.com/matchboxbrasil/import-jobs/issues"
   },
-  "homepage": "https://github.com/matchboxbrasil/import-jobs#readme"
+  "homepage": "https://github.com/matchboxbrasil/import-jobs#readme",
+  "eslintConfig": {
+    "root": true,
+    "rules": {
+      "indent": ["error", "tab"]
+    }
+  }
 }
