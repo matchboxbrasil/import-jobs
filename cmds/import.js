@@ -16,5 +16,8 @@ exports.handler = function (argv) {
 	const json = toJson(argv.path)
 
 	const {toXml} = require('../jobsite/buscojobs')
-	toXml(json)
+	const result = toXml(json)
+
+	const {writeFileSync} = require('fs')
+    writeFileSync('sample-result-buscojobs.xml', result)
 }
