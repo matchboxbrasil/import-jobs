@@ -20,7 +20,7 @@ const obj = {
     }
 }
 
-exports.toXml = function (array) {
+exports.parseTo = function (array) {
     const {toXml} = require('../helpers/xml')
 
     for (let i = 0; i < array.length; i++) {
@@ -34,8 +34,8 @@ exports.toXml = function (array) {
         newObj['job']['salary_numeric'] = index['Salário']
         newObj['job']['company'] = index['Empresa']
         newObj['job']['channels']['channel'] = index['Área']
-        newObj['job']['date'] = new Date()
-        newObj['job']['time'] = new Date()
+        newObj['job']['date'] = new Date().toLocaleDateString('pt-BR')
+        newObj['job']['time'] = new Date().toLocaleTimeString('pt-BR')
 
         xml.buscojobs.jobs[i] = newObj
     }

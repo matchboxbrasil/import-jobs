@@ -15,9 +15,9 @@ exports.handler = function (argv) {
 	const {toJson} = require('../helpers/xlsx')
 	const json = toJson(argv.path)
 
-	const {toXml} = require('../jobsite/buscojobs')
-	const result = toXml(json)
+	const {parseTo} = require('../jobsite/buscojobs')
+	const xml = parseTo(json)
 
 	const {writeFileSync} = require('fs')
-    writeFileSync('sample-result-buscojobs.xml', result)
+    writeFileSync('sample-result-buscojobs.xml', xml)
 }

@@ -8,7 +8,7 @@ exports.toXml = function (json) {
         ignoreAttributes : true,
         cdataTagName: '__cdata', //default is false
         cdataPositionChar: '\\c',
-        format: true,
+        format: false,
         indentBy: '  ',
         suppressEmptyNode: false,
         // tagValueProcessor: a=> he.encode(a, { useNamedReferences: true}),// default is a=>a
