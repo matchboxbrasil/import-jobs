@@ -42,6 +42,6 @@
   "jest": {
     "verbose": true,
     "testMatch": ["**/*.spec.js"],
-    "testPathIgnorePatterns": ["/node_modules/", "/cmds/"]
+    "testPathIgnorePatterns": ["/node_modules/", "/cli.js/"]
   }
 }
